@@ -38,7 +38,7 @@ const AddInformation = () => {
                             father: data.father,
                             mother: data.mother,
                             college: data.college,
-                            className: data.className,
+                            class: data.class,
                             roll: data.roll,
                             email: user?.email
                         }
@@ -150,10 +150,10 @@ const AddInformation = () => {
 
                     <div className="relative flex items-center mt-4">
                         <input type="text"
-                            {...register("className", {
-                                required: ' class name is required'
+                            {...register("class", {
+                                required: ' class is required'
                             })}
-                            className="block w-full px-5 py-3 text-gray-700 bg-white border rounded-lg dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Class Name" />
+                            className="block w-full px-5 py-3 text-gray-700 bg-white border rounded-lg dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Enter your class" />
                     </div>
                     {errors.className && <p className='text-red-600'>{errors.className?.message}</p>}
 
