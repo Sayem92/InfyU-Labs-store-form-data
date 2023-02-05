@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
-import { AuthContext } from '../../AuthProvider/AuthProvider';
+import { AuthContext } from '../AuthProvider/AuthProvider';
+
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,7 +11,7 @@ const Navbar = () => {
     let activeStyle = {
         textDecoration: "underline",
       };
-    
+    console.log(user)
 
     const handleLogout = () => {
         logOut()
