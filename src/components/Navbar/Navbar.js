@@ -42,7 +42,20 @@ const Navbar = () => {
                          style={({ isActive }) =>
                          isActive ? activeStyle : undefined
                        }
-                            to="/addTask"
+                            to="/home"
+                            aria-label="Home Page"
+                            title="Home Page"
+                            className="font-medium tracking-wide text-white transition-colors duration-200 hover:text-deep-purple-accent-400"
+                        >
+                            Home
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink
+                         style={({ isActive }) =>
+                         isActive ? activeStyle : undefined
+                       }
+                            to="/addInformation"
                             aria-label="Add Information"
                             title="Add Information"
                             className="font-medium tracking-wide text-white transition-colors duration-200 hover:text-deep-purple-accent-400"
@@ -138,6 +151,19 @@ const Navbar = () => {
                                 </div>
                                 <nav>
                                     <ul className="space-y-4">
+                                        <li>
+                                            <NavLink
+                                            style={({ isActive }) =>
+                                            isActive ? activeStyle : undefined
+                                          }
+                                                to="/home"
+                                                aria-label="Home Page"
+                                                title="Home Page"
+                                                className="font-medium tracking-wide text-gray-200 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                                            >
+                                               Home
+                                            </NavLink>
+                                        </li>
                                         <li>
                                             <NavLink
                                             style={({ isActive }) =>
