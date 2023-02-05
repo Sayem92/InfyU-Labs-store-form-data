@@ -20,6 +20,23 @@ const AllInformation = () => {
 
 
 
+    const handleDeleting = _id => {
+        const agreed = window.confirm('Are you sure you want to delete')
+        if (agreed) {
+
+            fetch(`http://localhost:5000/allInformation/${_id}`, {
+                method: "DELETE"
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount > 0) {
+                        toast.success(`Information deleted successfully`)
+                        refetch();
+                    }
+
+                })
+        }
+    };
 
 
 
