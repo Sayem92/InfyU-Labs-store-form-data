@@ -11,7 +11,6 @@ const Navbar = () => {
     let activeStyle = {
         textDecoration: "underline",
       };
-    console.log(user)
 
     const handleLogout = () => {
         logOut()
@@ -87,7 +86,7 @@ const Navbar = () => {
                                 className='btn px-2 py-3 font-medium bg-gray-400 hover:bg-gray-500 border-none text-white rounded-xl'>Log out</button>
                                 :
                                 <Link to='/login'>
-                                <button className='btn px-2 py-3 font-medium bg-gray-400 hover:bg-gray-500 border-none text-white rounded-xl'>Login</button>
+                                <button className='btn px-2 py-3 font-medium bg-gray-400 hover:bg-gray-500 border-none text-white rounded-xl'>Sign In</button>
                                 </Link>
                         }
                     </li>
@@ -198,7 +197,7 @@ const Navbar = () => {
                                                     :
                                                 <Link to='/login'>
                                                 <button
-                                                    className='btn px-3 py-3 font-medium bg-gray-400 hover:bg-gray-500 border-none text-black rounded'>Login</button>
+                                                    className='btn px-3 py-3 font-medium bg-gray-400 hover:bg-gray-500 border-none text-black rounded'>Sign In</button>
                                                 </Link>
                                             }
                                         </li>
