@@ -74,8 +74,8 @@ const AllInformation = () => {
                             <th className="p-3"></th>
                             <th className="p-3">Name</th>
                             <th className="p-3">Image</th>
-                            <th className="p-3">Father's</th>
-                            <th className="p-3">Mother's</th>
+                            <th className="p-3">Father's Name</th>
+                            <th className="p-3">Mother's Name</th>
                             <th className="p-3">College</th>
                             <th className="p-3">Class</th>
                             <th className="p-3">Roll</th>

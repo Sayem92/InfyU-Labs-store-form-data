@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
-
+import logo from '../../../src/assets/store-logo.webp'
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -30,6 +30,7 @@ const Navbar = () => {
                     title="Store Information"
                     className="inline-flex items-center"
                 >
+                    <img className='w-12 h-12' src={logo} alt="information"/>
 
                     <span className="ml-2 text-xl font-bold tracking-wide hover:text-black dark:text-green-500 uppercase">
                         Store Information
@@ -44,7 +45,7 @@ const Navbar = () => {
                             to="/home"
                             aria-label="Home Page"
                             title="Home Page"
-                            className="font-medium tracking-wide text-white transition-colors duration-200 hover:text-deep-purple-accent-400"
+                            className="hover:text-black font-medium tracking-wide text-white transition-colors duration-200 hover:text-deep-purple-accent-400"
                         >
                             Home
                         </NavLink>
@@ -57,7 +58,7 @@ const Navbar = () => {
                             to="/addInformation"
                             aria-label="Add Information"
                             title="Add Information"
-                            className="font-medium tracking-wide text-white transition-colors duration-200 hover:text-deep-purple-accent-400"
+                            className="hover:text-black font-medium tracking-wide text-white transition-colors duration-200 hover:text-deep-purple-accent-400"
                         >
                             Add Information
                         </NavLink>
@@ -70,7 +71,7 @@ const Navbar = () => {
                             to="/allInformation"
                             aria-label="All Information"
                             title="All Information"
-                            className="font-medium tracking-wide text-white transition-colors duration-200 hover:text-deep-purple-accent-400"
+                            className=" hover:text-black font-medium tracking-wide text-white transition-colors duration-200 hover:text-deep-purple-accent-400"
                         >
                             All Information
                         </NavLink>
@@ -126,6 +127,7 @@ const Navbar = () => {
                                             title="Store Information"
                                             className="inline-flex items-center"
                                         >
+                                             <img className='w-12 h-12' src={logo} alt="information"/>
 
                                             <span className="ml-2 text-xl font-bold tracking-wide text-green-500 uppercase">
                                                 Store Information
