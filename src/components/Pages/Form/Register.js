@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { userInfoSave } from '../../../API/UserData';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Register = () => {
@@ -31,9 +32,9 @@ const Register = () => {
                 updateUser(userInfo)
                     .then(() => {
                         
-                        toast.success('user info successfully')
-                        navigate(from, { replace: true });
-
+                        // save data -------------
+                        saveUser(data.name, data.email)
+                        
                     })
                 
             })
@@ -42,12 +43,38 @@ const Register = () => {
                 setSignUpError(err.message);
             })
             .finally(() => {
-                setLoading(false)
+                setLoading(false);
             })
     };
 
 
   
+    // //save user --------
+    const saveUser = (name, email) => {
+        const user = {
+            name,
+            email
+        }
+
+        fetch(`http://localhost:5000/users`, {
+            method: "PUT",
+            headers: {
+                'content-type': "application/json"
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => {
+                // console.log("save user", data);
+
+                toast.success('Save user data!');
+                setLoading(false);
+                navigate(from, { replace: true });
+
+               
+            })
+
+    };
 
 
 
@@ -56,7 +83,9 @@ const Register = () => {
         googleLogin()
             .then(result => {
                 const user = result.user;
-                console.log(user);
+                // console.log(user);
+                 // user data save --------------
+                 userInfoSave(user?.displayName, user?.email)
                 toast.success('Google Login Successfully!');
                 navigate(from, { replace: true }); 
 

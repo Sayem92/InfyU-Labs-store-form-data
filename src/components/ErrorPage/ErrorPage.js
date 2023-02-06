@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { useNavigate, useRouteError } from 'react-router-dom';
-import { AuthContext } from '../../AuthProvider/AuthProvider';
+import { AuthContext } from '../AuthProvider/AuthProvider';
+
 
 const ErrorPage = () => {
     const error = useRouteError();

@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { userInfoSave } from '../../../API/UserData';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Login = () => {
@@ -53,7 +54,9 @@ const Login = () => {
         googleLogin()
             .then(result => {
                 const user = result.user;
-                console.log(user);
+                // console.log(user);
+                // user data save --------------
+                userInfoSave(user?.displayName, user?.email)
                 toast.success('Google Login Successfully!');
                 navigate(from, { replace: true });
 
