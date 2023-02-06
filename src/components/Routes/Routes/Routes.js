@@ -5,6 +5,9 @@ import AddInformation from "../../Pages/AddInformation/AddInformation";
 import AllInformation from "../../Pages/AllInformation/AllInformation";
 import Login from "../../Pages/Form/Login";
 import Register from "../../Pages/Form/Register";
+import UpdateInformation from "../../Pages/UpdateInformation/UpdateInformation";
+
+
 
 export const router = createBrowserRouter([
     {
@@ -26,6 +29,11 @@ export const router = createBrowserRouter([
             {
                 path: '/allInformation',
                 element: <AllInformation></AllInformation>
+            },
+            {
+                path: '/updateInformation/:id',
+                loader: ({ params }) => fetch(`http://localhost:5000/updateInfor/${params.id}`),
+                element: <UpdateInformation></UpdateInformation>
             },
             {
                 path: '/login',
