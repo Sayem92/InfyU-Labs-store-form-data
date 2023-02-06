@@ -43,8 +43,6 @@ const AddInformation = () => {
                             email: user?.email
                         }
 
-                        console.log(addInformation)
-
 
                         fetch('http://localhost:5000/addInformation', {
                             method: 'POST',
@@ -56,7 +54,7 @@ const AddInformation = () => {
                                 // console.log(result);
                                 toast.success(`${data.name} Information save successful`);
                                 setLoading(false)
-                                navigate('/');
+                                navigate('/confirmation');
 
                             })
 
@@ -79,7 +77,7 @@ const AddInformation = () => {
 
     if (loading) {
         return <Loading></Loading>
-    }
+    };
 
     return (
         <section className="bg-white dark:bg-gray-900">

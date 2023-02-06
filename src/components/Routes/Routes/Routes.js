@@ -4,6 +4,7 @@ import Home from "../../Home/Home";
 import Main from "../../Layout/Main";
 import AddInformation from "../../Pages/AddInformation/AddInformation";
 import AllInformation from "../../Pages/AllInformation/AllInformation";
+import Confirm from "../../Pages/Confirm/Confirm";
 import Login from "../../Pages/Form/Login";
 import Register from "../../Pages/Form/Register";
 import UpdateInformation from "../../Pages/UpdateInformation/UpdateInformation";
@@ -45,6 +46,10 @@ export const router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>,
+            },
+            {
+                path: '/confirmation',
+                element: <Confirm></Confirm>
             }
             
             
