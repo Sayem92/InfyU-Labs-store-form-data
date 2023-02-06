@@ -91,10 +91,10 @@ const Navbar = () => {
                         {
                             user?.uid ?
                                 <button onClick={handleLogout}
-                                    className='btn px-2 py-3 font-medium bg-gray-400 hover:bg-gray-500 border-none text-white rounded-xl'>Log out</button>
+                                    className='btn px-2 py-3 font-medium bg-green-400 hover:bg-green-500 border-none text-white rounded-xl'>Log out</button>
                                 :
                                 <Link to='/login'>
-                                    <button className='btn px-2 py-3 font-medium bg-gray-400 hover:bg-gray-500 border-none text-white rounded-xl'>Sign In</button>
+                                    <button className='btn px-2 py-3 font-medium bg-green-400 hover:bg-green-500 border-none text-white rounded-xl'>Sign In</button>
                                 </Link>
                         }
                     </li>
@@ -205,11 +205,11 @@ const Navbar = () => {
                                             {
                                                 user?.uid ?
                                                     <button onClick={handleLogout}
-                                                        className='btn px-3 py-3 font-medium bg-gray-400 hover:bg-gray-500 border-none text-black rounded'>Log out</button>
+                                                        className='btn px-3 py-3 font-medium bg-green-400 hover:bg-green-500 border-none text-black rounded'>Log out</button>
                                                     :
                                                     <Link to='/login'>
                                                         <button
-                                                            className='btn px-3 py-3 font-medium bg-gray-400 hover:bg-gray-500 border-none text-black rounded'>Sign In</button>
+                                                            className='btn px-3 py-3 font-medium bg-green-400 hover:bg-green-500 border-none text-black rounded'>Sign In</button>
                                                     </Link>
                                             }
                                         </li>
