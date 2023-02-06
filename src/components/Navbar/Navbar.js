@@ -2,15 +2,18 @@ import React, { useContext, useState } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import logo from '../../../src/assets/store-logo.webp'
+import UseAdmin from '../../API/UseAdmin';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const { user, logOut } = useContext(AuthContext);
     const navigate = useNavigate();
-    
+    const [isAdmin] = UseAdmin(user?.email);
+
+
     let activeStyle = {
         textDecoration: "underline",
-      };
+    };
 
     const handleLogout = () => {
         logOut()
@@ -30,7 +33,7 @@ const Navbar = () => {
                     title="Store Information"
                     className="inline-flex items-center"
                 >
-                    <img className='w-12 h-12' src={logo} alt="information"/>
+                    <img className='w-12 h-12' src={logo} alt="information" />
 
                     <span className="ml-2 text-xl font-bold tracking-wide hover:text-black dark:text-green-500 uppercase">
                         Store Information
@@ -39,9 +42,9 @@ const Navbar = () => {
                 <ul className="flex items-center hidden space-x-8 lg:flex">
                     <li>
                         <NavLink
-                         style={({ isActive }) =>
-                         isActive ? activeStyle : undefined
-                       }
+                            style={({ isActive }) =>
+                                isActive ? activeStyle : undefined
+                            }
                             to="/home"
                             aria-label="Home Page"
                             title="Home Page"
@@ -52,9 +55,9 @@ const Navbar = () => {
                     </li>
                     <li>
                         <NavLink
-                         style={({ isActive }) =>
-                         isActive ? activeStyle : undefined
-                       }
+                            style={({ isActive }) =>
+                                isActive ? activeStyle : undefined
+                            }
                             to="/addInformation"
                             aria-label="Add Information"
                             title="Add Information"
@@ -63,31 +66,35 @@ const Navbar = () => {
                             Add Information
                         </NavLink>
                     </li>
-                    <li>
-                        <NavLink
-                         style={({ isActive }) =>
-                         isActive ? activeStyle : undefined
-                       }
-                            to="/allInformation"
-                            aria-label="All Information"
-                            title="All Information"
-                            className=" hover:text-black font-medium tracking-wide text-white transition-colors duration-200 hover:text-deep-purple-accent-400"
-                        >
-                            All Information
-                        </NavLink>
-                    </li>
-                    
+                    {
+                        isAdmin && user?.uid &&
+                        <li>
+                            <NavLink
+                                style={({ isActive }) =>
+                                    isActive ? activeStyle : undefined
+                                }
+                                to="/allInformation"
+                                aria-label="All Information"
+                                title="All Information"
+                                className=" hover:text-black font-medium tracking-wide text-white transition-colors duration-200 hover:text-deep-purple-accent-400"
+                            >
+                                All Information
+                            </NavLink>
+                        </li>
+                    }
+
+
                 </ul>
                 <ul className="flex items-center hidden space-x-8 lg:flex">
 
                     <li>
                         {
                             user?.uid ?
-                            <button onClick={handleLogout}
-                                className='btn px-2 py-3 font-medium bg-gray-400 hover:bg-gray-500 border-none text-white rounded-xl'>Log out</button>
+                                <button onClick={handleLogout}
+                                    className='btn px-2 py-3 font-medium bg-gray-400 hover:bg-gray-500 border-none text-white rounded-xl'>Log out</button>
                                 :
                                 <Link to='/login'>
-                                <button className='btn px-2 py-3 font-medium bg-gray-400 hover:bg-gray-500 border-none text-white rounded-xl'>Sign In</button>
+                                    <button className='btn px-2 py-3 font-medium bg-gray-400 hover:bg-gray-500 border-none text-white rounded-xl'>Sign In</button>
                                 </Link>
                         }
                     </li>
@@ -127,7 +134,7 @@ const Navbar = () => {
                                             title="Store Information"
                                             className="inline-flex items-center"
                                         >
-                                             <img className='w-12 h-12' src={logo} alt="information"/>
+                                            <img className='w-12 h-12' src={logo} alt="information" />
 
                                             <span className="ml-2 text-xl font-bold tracking-wide text-green-500 uppercase">
                                                 Store Information
@@ -154,22 +161,22 @@ const Navbar = () => {
                                     <ul className="space-y-4">
                                         <li>
                                             <NavLink
-                                            style={({ isActive }) =>
-                                            isActive ? activeStyle : undefined
-                                          }
+                                                style={({ isActive }) =>
+                                                    isActive ? activeStyle : undefined
+                                                }
                                                 to="/home"
                                                 aria-label="Home Page"
                                                 title="Home Page"
                                                 className="font-medium tracking-wide text-gray-200 transition-colors duration-200 hover:text-deep-purple-accent-400"
                                             >
-                                               Home
+                                                Home
                                             </NavLink>
                                         </li>
                                         <li>
                                             <NavLink
-                                            style={({ isActive }) =>
-                                            isActive ? activeStyle : undefined
-                                          }
+                                                style={({ isActive }) =>
+                                                    isActive ? activeStyle : undefined
+                                                }
                                                 to="/addInformation"
                                                 aria-label="Add Information"
                                                 title="Add Information"
@@ -178,29 +185,32 @@ const Navbar = () => {
                                                 Add Information
                                             </NavLink>
                                         </li>
-                                        <li>
-                                            <NavLink
-                                            style={({ isActive }) =>
-                                            isActive ? activeStyle : undefined
-                                          }
-                                                to="/allInformation"
-                                                aria-label="All Information"
-                                                title="All Information"
-                                                className="font-medium tracking-wide text-gray-200 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                                            >
-                                                All Information
-                                            </NavLink>
-                                        </li>
+                                        {
+                                            isAdmin && user?.uid &&
+                                            <li>
+                                                <NavLink
+                                                    style={({ isActive }) =>
+                                                        isActive ? activeStyle : undefined
+                                                    }
+                                                    to="/allInformation"
+                                                    aria-label="All Information"
+                                                    title="All Information"
+                                                    className="font-medium tracking-wide text-gray-200 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                                                >
+                                                    All Information
+                                                </NavLink>
+                                            </li>
+                                        }
                                         <li>
                                             {
                                                 user?.uid ?
-                                                <button onClick={handleLogout}
-                                                    className='btn px-3 py-3 font-medium bg-gray-400 hover:bg-gray-500 border-none text-black rounded'>Log out</button>
+                                                    <button onClick={handleLogout}
+                                                        className='btn px-3 py-3 font-medium bg-gray-400 hover:bg-gray-500 border-none text-black rounded'>Log out</button>
                                                     :
-                                                <Link to='/login'>
-                                                <button
-                                                    className='btn px-3 py-3 font-medium bg-gray-400 hover:bg-gray-500 border-none text-black rounded'>Sign In</button>
-                                                </Link>
+                                                    <Link to='/login'>
+                                                        <button
+                                                            className='btn px-3 py-3 font-medium bg-gray-400 hover:bg-gray-500 border-none text-black rounded'>Sign In</button>
+                                                    </Link>
                                             }
                                         </li>
                                     </ul>

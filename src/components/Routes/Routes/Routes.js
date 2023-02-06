@@ -31,7 +31,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/allInformation',
-                element: <AllInformation></AllInformation>
+                element: <PrivateRoutes><AllInformation></AllInformation></PrivateRoutes>
             },
             {
                 path: '/updateInformation/:id',
