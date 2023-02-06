@@ -6,6 +6,7 @@ import AllInformation from "../../Pages/AllInformation/AllInformation";
 import Login from "../../Pages/Form/Login";
 import Register from "../../Pages/Form/Register";
 import UpdateInformation from "../../Pages/UpdateInformation/UpdateInformation";
+import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
 
 
 
@@ -24,7 +25,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/addInformation',
-                element: <AddInformation></AddInformation>
+                element: <PrivateRoutes><AddInformation></AddInformation></PrivateRoutes>
             },
             {
                 path: '/allInformation',
