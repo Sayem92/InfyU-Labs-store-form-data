@@ -6,7 +6,7 @@ export const userInfoSave = (name, email) => {
         email
     }
 
-    fetch(`http://localhost:5000/users`, {
+    fetch(`https://infy-u-labs-store-form-data-server.vercel.app/users`, {
         method: "PUT",
         headers: {
             'content-type': "application/json"

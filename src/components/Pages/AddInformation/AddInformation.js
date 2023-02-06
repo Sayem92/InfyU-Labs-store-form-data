@@ -44,7 +44,7 @@ const AddInformation = () => {
                         }
 
 
-                        fetch('http://localhost:5000/addInformation', {
+                        fetch('https://infy-u-labs-store-form-data-server.vercel.app/addInformation', {
                             method: 'POST',
                             headers: { 'Content-Type': 'application/json' },
                             body: JSON.stringify(addInformation)

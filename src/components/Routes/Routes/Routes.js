@@ -36,7 +36,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/updateInformation/:id',
-                loader: ({ params }) => fetch(`http://localhost:5000/updateInfor/${params.id}`),
+                loader: ({ params }) => fetch(`https://infy-u-labs-store-form-data-server.vercel.app/updateInfor/${params.id}`),
                 element: <UpdateInformation></UpdateInformation>
             },
             {
@@ -51,12 +51,12 @@ export const router = createBrowserRouter([
                 path: '/confirmation',
                 element: <Confirm></Confirm>
             }
-            
-            
-           
-            
-            
-            
+
+
+
+
+
+
         ]
     }
 ])

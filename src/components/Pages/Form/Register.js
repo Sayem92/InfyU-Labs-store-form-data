@@ -17,7 +17,7 @@ const Register = () => {
 
     // user signup---------
     const handleSignUp = data => {
-      
+
         createUser(data.email, data.password)
             .then(result => {
                 const user = result.user;
@@ -31,12 +31,12 @@ const Register = () => {
                 }
                 updateUser(userInfo)
                     .then(() => {
-                        
+
                         // save data -------------
                         saveUser(data.name, data.email)
-                        
+
                     })
-                
+
             })
             .catch(err => {
                 console.log(err);
@@ -48,7 +48,7 @@ const Register = () => {
     };
 
 
-  
+
     // //save user --------
     const saveUser = (name, email) => {
         const user = {
@@ -56,7 +56,7 @@ const Register = () => {
             email
         }
 
-        fetch(`http://localhost:5000/users`, {
+        fetch(`https://infy-u-labs-store-form-data-server.vercel.app/users`, {
             method: "PUT",
             headers: {
                 'content-type': "application/json"
@@ -71,7 +71,7 @@ const Register = () => {
                 setLoading(false);
                 navigate(from, { replace: true });
 
-               
+
             })
 
     };
@@ -84,10 +84,10 @@ const Register = () => {
             .then(result => {
                 const user = result.user;
                 // console.log(user);
-                 // user data save --------------
-                 userInfoSave(user?.displayName, user?.email)
+                // user data save --------------
+                userInfoSave(user?.displayName, user?.email)
                 toast.success('Google Login Successfully!');
-                navigate(from, { replace: true }); 
+                navigate(from, { replace: true });
 
             })
             .catch(err => console.log(err))

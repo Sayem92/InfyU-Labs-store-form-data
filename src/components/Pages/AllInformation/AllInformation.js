@@ -10,7 +10,7 @@ const AllInformation = () => {
     const { data: allInformation = [], isLoading, refetch } = useQuery({
         queryKey: [''],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/AllInformation`)
+            const res = await fetch(`https://infy-u-labs-store-form-data-server.vercel.app/AllInformation`)
             const data = await res.json()
             return data;
         }
@@ -22,7 +22,7 @@ const AllInformation = () => {
         const agreed = window.confirm('Are you sure you want to delete')
         if (agreed) {
 
-            fetch(`http://localhost:5000/allInformation/${_id}`, {
+            fetch(`https://infy-u-labs-store-form-data-server.vercel.app/allInformation/${_id}`, {
                 method: "DELETE"
             })
                 .then(res => res.json())
@@ -110,7 +110,7 @@ const AllInformation = () => {
                                 <td className="px-3 py-2">
                                     <p className='dark:text-white text-black'>{information.roll}</p>
                                 </td>
-                                
+
                                 <td className="px-3 py-2">
                                     <Link to={`/updateInformation/${information._id}`} >
                                         <button className='px-2 py-3 rounded bg-sky-500 text-white'>Update</button>

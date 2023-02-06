@@ -17,7 +17,7 @@ const UpdateInformation = () => {
     const handleUpdate = data => {
 
         if (data.image.length > 0) {
-           
+
             setLoading(true);;
             const newImage = data.image[0];
             const formData = new FormData();
@@ -43,7 +43,7 @@ const UpdateInformation = () => {
                             email: data.email,
                         }
 
-                        fetch(`http://localhost:5000/allInformation/${_id}`, {
+                        fetch(`https://infy-u-labs-store-form-data-server.vercel.app/allInformation/${_id}`, {
                             method: 'PUT',
                             headers: { 'Content-Type': 'application/json' },
                             body: JSON.stringify(addInformation)
@@ -64,11 +64,11 @@ const UpdateInformation = () => {
 
 
 
-      
+
 
 
         if (data.image.length === 0) {
-          
+
             setLoading(true);
             const addInformation = {
                 name: data.name,
@@ -82,7 +82,7 @@ const UpdateInformation = () => {
             }
 
 
-            fetch(`http://localhost:5000/allInformation/${_id}`, {
+            fetch(`https://infy-u-labs-store-form-data-server.vercel.app/allInformation/${_id}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(addInformation)
@@ -146,7 +146,7 @@ const UpdateInformation = () => {
                         <input id="dropzone-file" type="file"
                             {...register('image',)}
 
-                            className="hidden"  />
+                            className="hidden" />
 
                         {
                             image && <div className="pl-10 w-32 rounded-lg">
