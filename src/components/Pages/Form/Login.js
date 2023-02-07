@@ -72,9 +72,11 @@ const Login = () => {
             <div className="container flex items-center justify-center min-h-screen px-6 py-16 mx-auto">
                 <form onSubmit={handleSubmit(handleLogin)}
                     className="w-full max-w-md">
-                    <h1 className="text-3xl text-center font-semibold text-gray-800 capitalize  dark:text-white">sign In</h1>
+                    <h1 className="text-3xl mb-2 text-center font-semibold text-gray-800 capitalize  dark:text-white">sign In</h1>
+                    <p><small>Email:</small> <strong className='ml-2 md:ml-16'> majarul@gmail.com</strong></p>
+                    <p><small>Password:</small> <strong className='ml-10'> sayemA1!</strong></p>
 
-                    <div className="relative flex items-center mt-8">
+                    <div className="relative flex items-center mt-6">
                         <span className="absolute">
                             <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 mx-3 text-gray-300 dark:text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
