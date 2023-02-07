@@ -73,7 +73,7 @@ const Login = () => {
                 <form onSubmit={handleSubmit(handleLogin)}
                     className="w-full max-w-md">
                     <h1 className="text-3xl mb-2 text-center font-semibold text-gray-800 capitalize  dark:text-white">sign In</h1>
-                    <p><small>Email:</small> <strong className='ml-2 md:ml-16'> majarul@gmail.com</strong></p>
+                    <p><small>Email:</small> <strong className='ml-2 md:ml-16'> majarul@gmail.com</strong> (admin)</p>
                     <p><small>Password:</small> <strong className='ml-10'> sayemA1!</strong></p>
 
                     <div className="relative flex items-center mt-6">
